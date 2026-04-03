@@ -1,7 +1,3 @@
-<div align="left">
-  <img src="docs/icl_logo.jpg" width="40%" alt="Intelligent Control Lab, Carnegie Mellon University">
-</div>
-
 <div align="center">
 
 # Emergent Neural Automaton Policies: Learning Symbolic Structure from Visuomotor Trajectories
@@ -18,10 +14,9 @@
 
 </div>
 
-## 📋 TODO
+## TODO
 
-- **Reference implementation (current):** This repository is a **lightweight, simplified** release of ENAP. It implements the full pipeline—demonstration preprocessing, discrete structure (PMM) learning, RNN pretraining, residual policy training, and evaluation—on our **custom ManiSkill PegInsertionSide** setup (see `peg_insertion_side_replace.py` and `scripts/eval/peg_insert_eval.py`).
-- **Planned:** Additional tasks, environments, and experiment scripts aligned with the full paper will be **uploaded in future updates**.
+- **Reference implementation (current):** This repository is a lightweight, simplified release of ENAP. It implements the full pipeline on a **custom ManiSkill `PegInsertionSide-v1` setup** (Versus stock ManiSkill, the main change is dual-end insertion: either the orange (head) or white (tail) end can satisfy the success condition.) Additional tasks, environments, and experiment scripts aligned with the full paper will be uploaded in future updates.
 
 ## Abstract
 
@@ -37,7 +32,7 @@
 
 ## Overview
 
-This repository implements **ENAP** using **[ManiSkill](https://github.com/haosulab/ManiSkill)** for visuomotor simulation and control (we do **not** use Habitat). The pipeline learns a discrete **PMM** (Mealy-style) structure from demonstrations, then trains a **residual** policy conditioned on that structure.
+This repository implements ENAP using [ManiSkill](https://github.com/haosulab/ManiSkill) for visuomotor simulation and control. The pipeline learns a discrete PMM structure from demonstrations, then trains a residual policy conditioned on that structure.
 
 ## Installation
 
@@ -48,25 +43,22 @@ bash setup_enap_env.sh
 conda activate enap_env
 ```
 
-The script creates `enap_env`, installs `mani_skill`, `torch`, `hdbscan`, `scikit-learn`, and replaces ManiSkill’s stock `peg_insertion_side.py` with our customized task file [`peg_insertion_side_replace.py`](peg_insertion_side_replace.py) (required for experiments in this codebase).
+The script creates replaces ManiSkill’s stock `peg_insertion_side.py` with our customized task file [`peg_insertion_side_replace.py`](peg_insertion_side_replace.py) (required for experiments in this codebase).
 
 Install any additional packages your workflow needs (e.g. `tyro`, `matplotlib`, `tqdm`) via `pip` as you run the scripts.
 
 ## Data and training
 
-1. **Demonstrations**  
-   Place trajectory data in the format expected by the preprocessing script (see `data/preprocess.py`: episodes with `rgb_feature`, `pos_feature`, actions, etc.).
-
-2. **Clustering and discrete states**  
-   From the repo root:
+1. **Demonstrations and Clustering**  
+   Place trajectory data in the format expected by the preprocessing script:
 
    ```bash
    python data/preprocess.py --pkl <path_to_trajectories.pkl> [--output-pkl data/episodes_with_states.pkl]
    ```
 
-   This produces `data/episodes_with_states.pkl` (or your chosen output path) with per-step cluster labels and centers.
+   This produces `data/episodes_with_states.pkl` with per-step cluster labels and centers.
 
-3. **RNN pretraining and residual training**  
+2. **RNN pretraining and residual training**  
 
    ```bash
    bash scripts/train/train.sh
@@ -76,13 +68,9 @@ Install any additional packages your workflow needs (e.g. `tyro`, `matplotlib`, 
 
 ## Evaluation
 
-Example: PMM + residual policy on the customized Peg Insertion task (see `scripts/eval/peg_insert_eval.py` for flags and paths to PMM / residual weights and encoders).
-
 ```bash
 python scripts/eval/peg_insert_eval.py
 ```
-
-Adjust `tyro` CLI defaults in the script for your checkpoint locations.
 
 ## Citation
 
@@ -101,4 +89,4 @@ If you find this work useful, please cite our paper:
 
 ## Acknowledgments
 
-This code builds on **[ManiSkill](https://github.com/haosulab/ManiSkill)**. We thank the ManiSkill team for the simulation stack and APIs.
+This code builds on [ManiSkill](https://github.com/haosulab/ManiSkill). We thank the ManiSkill team for the simulation stack and APIs.
