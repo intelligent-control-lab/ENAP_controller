@@ -27,9 +27,9 @@
 
 ![Method overview](docs/MethodOverview.jpg)
 
-**Figure 1.** ENAP follows a three-stage pipeline—(i) symbol abstraction, (ii) structure extraction via an extended L*, and (iii) bi-level control—to learn structured policies from demonstrations.
-
 </div>
+
+**Figure 1.** ENAP follows a three-stage pipeline—(i) symbol abstraction, (ii) structure extraction via an extended L*, and (iii) bi-level control—to learn structured policies from demonstrations.
 
 ## Overview
 
