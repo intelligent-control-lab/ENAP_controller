@@ -1,3 +1,7 @@
+<div align="left">
+  <img src="docs/icl_logo.jpg" width="40%" alt="Intelligent Control Lab, Carnegie Mellon University">
+</div>
+
 <div align="center">
 
 # Emergent Neural Automaton Policies: Learning Symbolic Structure from Visuomotor Trajectories
@@ -14,17 +18,22 @@
 
 </div>
 
+## 📋 TODO
+
+- **Reference implementation (current):** This repository is a **lightweight, simplified** release of ENAP. It implements the full pipeline—demonstration preprocessing, discrete structure (PMM) learning, RNN pretraining, residual policy training, and evaluation—on our **custom ManiSkill PegInsertionSide** setup (see `peg_insertion_side_replace.py` and `scripts/eval/peg_insert_eval.py`).
+- **Planned:** Additional tasks, environments, and experiment scripts aligned with the full paper will be **uploaded in future updates**.
+
 ## Abstract
 
 > Scaling robot learning to long-horizon tasks remains a formidable challenge. While end-to-end policies often lack the structural priors needed for effective long-term reasoning, traditional neuro-symbolic methods rely heavily on hand-crafted symbolic priors. To address the issue, we introduce ENAP (Emergent Neural Automaton Policy), a framework that allows a bi-level neuro-symbolic policy to adaptively emerge from demonstrations. Specifically, we first employ adaptive clustering and an extension of the L* algorithm to infer a Mealy state machine from visuomotor data, which serves as an interpretable high-level planner capturing latent task modes. Then, this discrete structure guides a low-level reactive residual network to learn precise continuous control via behavior cloning. By explicitly modeling the task policy with discrete transitions and continuous residuals, ENAP achieves high sample efficiency and interpretability without requiring task-specific labels. Extensive experiments on complex manipulation and long-horizon tasks demonstrate that ENAP outperforms state-of-the-art end-to-end VLA policies by up to 27% in low-data regimes, while offering a structured representation of robotic intent.
 
 <div align="center">
 
-![ENAP method overview](docs/MethodOverview.jpg)
+![Method overview](docs/MethodOverview.jpg)
+
+**Figure 1.** ENAP follows a three-stage pipeline—(i) symbol abstraction, (ii) structure extraction via an extended L*, and (iii) bi-level control—to learn structured policies from demonstrations.
 
 </div>
-
-**Figure:** method overview (`docs/MethodOverview.jpg`). If preview stays blank: (1) open the `ENAP_public` folder as the workspace root, or click the path above; (2) on GitHub, run `git add docs/MethodOverview.jpg` and push so the file is in the repo.
 
 ## Overview
 
@@ -88,6 +97,7 @@ If you find this work useful, please cite our paper:
 }
 ```
 
+**Paper:** [https://arxiv.org/abs/2603.25903](https://arxiv.org/abs/2603.25903)
 
 ## Acknowledgments
 
