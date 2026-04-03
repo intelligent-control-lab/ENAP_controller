@@ -9,6 +9,7 @@
 \* *Equal contribution*
 
 [![arXiv](https://img.shields.io/badge/arXiv-2603.25903-b31b1b.svg)](https://arxiv.org/abs/2603.25903)
+[![Project webpage](https://img.shields.io/badge/webpage-ENAP-8034a9.svg)](https://intelligent-control-lab.github.io/ENAP-project-webpage/)
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
 [![ManiSkill](https://img.shields.io/badge/simulator-ManiSkill-green.svg)](https://github.com/haosulab/ManiSkill)
 
