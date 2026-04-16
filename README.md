@@ -66,6 +66,7 @@ Install any additional packages your workflow needs (e.g. `tyro`, `matplotlib`, 
    ```
 
    This runs `scripts/train/rnn_train.py` then `scripts/train/residual_train.py` with their default CLI arguments. Checkpoints and artifacts are written under `results/` and `results/checkpoints/`.
+   The generated PMM can be visualized using online tools like [Graphviz](https://dreampuf.github.io/GraphvizOnline/).
 
 ## Evaluation
 
