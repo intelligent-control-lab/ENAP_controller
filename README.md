@@ -8,8 +8,9 @@
 
 \* *Equal contribution*
 
-**Robotics: Science and Systems: 2026**
+**[Robotics: Science and Systems (RSS) 2026](https://roboticsproceedings.org/rss22/p144.html)**
 
+[![RSS 2026](https://img.shields.io/badge/RSS-2026-455e3a.svg)](https://roboticsproceedings.org/rss22/p144.html)
 [![arXiv](https://img.shields.io/badge/arXiv-2603.25903-b31b1b.svg)](https://arxiv.org/abs/2603.25903)
 [![Project webpage](https://img.shields.io/badge/webpage-ENAP-8034a9.svg)](https://intelligent-control-lab.github.io/ENAP-project-webpage/)
 [![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-3100/)
@@ -81,15 +82,18 @@ python scripts/eval/peg_insert_eval.py
 If you find this work useful, please cite our paper:
 
 ```bibtex
-@article{pan2026enap,
+@inproceedings{pan2026emergent,
   title={Emergent Neural Automaton Policies: Learning Symbolic Structure from Visuomotor Trajectories},
   author={Pan, Yiyuan and Luo, Xusheng and Hu, Hanjiang and Yu, Peiqi and Liu, Changliu},
-  journal={arXiv preprint arXiv:2603.25903},
-  year={2026}
+  booktitle={Proceedings of Robotics: Science and Systems},
+  address={Sydney, Australia},
+  month={July},
+  year={2026},
+  doi={10.15607/RSS.2026.XXII.144}
 }
 ```
 
-**Paper:** [https://arxiv.org/abs/2603.25903](https://arxiv.org/abs/2603.25903)
+**Paper:** [RSS 2026 proceedings](https://roboticsproceedings.org/rss22/p144.html) (DOI: [10.15607/RSS.2026.XXII.144](https://doi.org/10.15607/RSS.2026.XXII.144)) · [arXiv:2603.25903](https://arxiv.org/abs/2603.25903)
 
 ## Acknowledgments
 
